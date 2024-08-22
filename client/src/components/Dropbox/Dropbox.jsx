@@ -20,10 +20,8 @@ function Dropbox ({setLoading, loading}) {
 
   const bar = document.getElementById("bar")
 
-    const onDrop = async (acceptedFiles, rejectedFiles) => {
-   
-    
-     
+    const onDrop = async (acceptedFiles) => {
+  
       if(acceptedFiles.length > 0) {
         setLoading(true)
         setFiles(acceptedFiles.map(file => file));

@@ -3,11 +3,24 @@ const path = require('path');
 const multer = require('multer');
 const fs = require('fs')
 const cors = require('cors');
+const cloudinary = require("cloudinary").v2;
 
 const app = express()
 app.use(cors());
 
+cloudinary.config({
+  cloud_name: 'dghzq6xtd',
+  api_key: '388844636378436',
+  api_secret: 'dW7NnZbyMAtfVRR5-gdyAL8-9mE',
+  secure: true,
+});
 
+// async function handleUpload(file) {
+//   const res = await cloudinary.uploader.upload(file, {
+//     resource_type: "auto",
+//   });
+//   return res;
+// }
 
 const storage = multer.diskStorage({
   destination: "./uploads",
@@ -19,7 +32,7 @@ const storage = multer.diskStorage({
 const upload = multer({storage: storage})
 
 
-app.post("/upload", upload.array("files"), (req, res) => {
+app.post("/upload", upload.array("files"), async (req, res) => {
 
   const uploadedFiles = req.files
   console.log(uploadedFiles)
@@ -30,14 +43,21 @@ app.post("/upload", upload.array("files"), (req, res) => {
   for(const file of uploadedFiles) {
     const filePath = file.path
     const fileName = file.originalname
+ 
 
   try {
-
+ 
+   await cloudinary.uploader
+    .upload(
+        `${filePath}`, {
+            public_id: `${fileName}`})
     fs.renameSync(filePath, `./uploads/${fileName}`)
-    // const result = await cloudinary.uploader.upload(file.path);
-    // console.log(result)
+
   } catch (error) {
     console.log("Error", error)
+    res.send({
+      message: error.message,
+    });
     return res.status(500).send("error saving files")
   }
 }
