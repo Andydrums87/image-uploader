@@ -36,6 +36,8 @@ function Dropbox ({setLoading, loading}) {
             headers: {
                 "Content-Type": "multipart/form-data"
             },
+            timeout: 6000,
+            timeoutErrorMessage: "file took too long",
               onUploadProgress: (progressEvent) => {
                 const percentCompleted = (progressEvent.loaded / progressEvent.total) * 100;
                 bar.setAttribute('value', percentCompleted)
