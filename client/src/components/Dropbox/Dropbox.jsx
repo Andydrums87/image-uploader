@@ -12,8 +12,6 @@ import Uploading from "../Uploading/Uploading";
 
 
 
-
-
 function Dropbox ({setLoading, loading}) {
     const [files, setFiles] = useState([])
     const [uploaded, setUploaded] = useState(false)
@@ -38,7 +36,7 @@ function Dropbox ({setLoading, loading}) {
             headers: {
                 "Content-Type": "multipart/form-data"
             },
-            timeout: 1000,
+            timeout: 3000,
               onUploadProgress: (progressEvent) => {
                 const percentCompleted = (progressEvent.loaded / progressEvent.total) * 100;
                 bar.setAttribute('value', percentCompleted)
