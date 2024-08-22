@@ -27,7 +27,7 @@
 
 progress {
     width:60%;
-    background-color:var(--bg-box-color);
+    background-color:var(--dark-blue);
    
     height:5px;
     position: relative;
