@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+:root {
+  --bg-main-color: 
+  #F9FAFB;
+  --bg-box-color: #FFFFFF;
+  --white: #FFFFFF;
+  --off-white: #E5E7EB;
+  --light-white: #F9FAFB;
+  --text-color: #121826;
+  --med-black: #212936;
+  --light-black: #4D5562;
+  --dark-blue: #3662E3;
+  --light-blue: #C2DAF9;
+  --border-color:#E5E7EB;
+  --theme-icon: url(/images/Moon_fill.svg);
+  --bg-icon: #FFFFFF;
+
+
+}
+
+[data-theme="dark"] {
+  --bg-main-color:
+  #121826;
+  --bg-box-color: #212936;
+  --text-color: #E5E7EB;
+  --border-color: #4D5562;
+  --theme-icon: url(/images/Sun_fill.svg);
+  --bg-icon: #212936;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+
+  font-family: "Inter", sans-serif;
+
+}
+
+
+.container {
+  height:100vh;
+  background-color: var(--bg-main-color);
+}
+

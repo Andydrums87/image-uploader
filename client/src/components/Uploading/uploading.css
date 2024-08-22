@@ -1,0 +1,41 @@
+.loading__container {
+
+   display: flex;
+   flex-direction: column;
+   width:40%;
+   margin:0 auto;
+   padding:40px;
+   justify-content: center;
+   align-items: center;
+   gap:20px;
+   color:var(--text-color);
+   background-color: var(--bg-box-color);
+   box-shadow: 10px 10px 13px -3px rgba(0,0,0,0.30);
+   -webkit-box-shadow: 10px 10px 13px -3px rgba(0,0,0,0.30);
+   -moz-box-shadow: 10px 10px 13px -3px rgba(0,0,0,0.30);
+   border-radius: 5px;
+   position: absolute;
+   left:30%;
+   top:50%;
+
+}
+
+.uploading__content {
+    font-size: 0.6rem;
+    font-weight: lighter;
+}
+
+progress {
+    width:60%;
+    background-color:var(--bg-box-color);
+   
+    height:5px;
+    position: relative;
+    border-radius: 5px;
+}
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+.btn {
+background-color: var(--dark-blue);
+border: none;
+color: var(--light-white);
+padding:10px 30px;
+border-radius: 10px;;
+font-size: 0.6rem;;
+margin-top: 30px;;
+cursor: pointer;
+}
+
+#download__btn {
+    background-image: url(images/download.svg);
+    background-repeat: no-repeat;
+    background-position: 15% 50%;
+
+}
