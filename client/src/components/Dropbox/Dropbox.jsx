@@ -41,7 +41,7 @@ function Dropbox ({setLoading, loading}) {
               onUploadProgress: (progressEvent) => {
                 const percentCompleted = (progressEvent.loaded / progressEvent.total) * 100;
                 bar.setAttribute('value', percentCompleted)
-                bar.previousElementSibling.textContent = `${percentCompleted}`
+                bar.previousElementSibling.textContent = `${percentCompleted.toFixed()}%`
                 if (percentCompleted === 100) {
                   bar.previousElementSibling.textContent = "Upload Complete"
               
