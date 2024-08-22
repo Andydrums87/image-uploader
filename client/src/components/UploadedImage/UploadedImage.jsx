@@ -5,7 +5,7 @@ function UploadedImage ({files, uploaded}) {
     return (
         <img className="uploaded__img"
          style={{display: uploaded === true ? "block" : "none"}} 
-         src={uploaded === true && URL.createObjectURL(files[0])} alt="" 
+         src={files[0] && URL.createObjectURL(files[0])} alt="" 
          />
     )
 }

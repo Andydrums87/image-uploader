@@ -6,8 +6,12 @@ const fs = require('fs')
 const cors = require('cors');
 
 
+
+
 const app = express()
 app.use(cors());
+
+
 
 const storage = multer.diskStorage({
   destination: "./uploads",
@@ -20,8 +24,10 @@ const upload = multer({storage: storage})
 
 
 app.post("/upload", upload.array("files"), (req, res) => {
+
   const uploadedFiles = req.files
   console.log(uploadedFiles)
+
   if (!uploadedFiles) {
     return res.status(400).send("No files uploaded!")
   }
@@ -29,10 +35,11 @@ app.post("/upload", upload.array("files"), (req, res) => {
     const filePath = file.path
     const fileName = file.originalname
 
-
   try {
-   
+
     fs.renameSync(filePath, `./uploads/${fileName}`)
+    // const result = await cloudinary.uploader.upload(file.path);
+    // console.log(result)
   } catch (error) {
     console.log("Error", error)
     return res.status(500).send("error saving files")
@@ -43,4 +50,4 @@ app.post("/upload", upload.array("files"), (req, res) => {
 
 
 
-app.listen(8080, () => console.log("listening on port 8080"))
+app.listen(5000, () => console.log("listening on port 5000"))

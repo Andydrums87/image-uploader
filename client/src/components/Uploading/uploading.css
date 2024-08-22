@@ -20,6 +20,13 @@
 
 }
 
+@media (max-width: 640px) {
+    .loading__container {
+        width:80%;
+        left:10%;
+    }
+}
+
 .uploading__content {
     font-size: 0.6rem;
     font-weight: lighter;

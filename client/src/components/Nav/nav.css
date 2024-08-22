@@ -24,5 +24,11 @@
     width:110px;
 }
 
+@media(max-width:640px) {
+    .nav__container {
+        padding: 10px 10px;
+    }
+}
+
 
 

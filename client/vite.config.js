@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
+    // '/upload': "http://localhost:5000"
     '/upload': "https://image-uploader-backend-48ij.onrender.com"
     },
     base: '/image-uploader/',
