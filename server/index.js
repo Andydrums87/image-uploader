@@ -9,9 +9,9 @@ const app = express()
 app.use(cors());
 
 cloudinary.config({
-  cloud_name: 'dghzq6xtd',
-  api_key: '388844636378436',
-  api_secret: 'dW7NnZbyMAtfVRR5-gdyAL8-9mE',
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_KEY,
+  api_secret: process.env.CLOUD_SECRET,
   secure: true,
 });
 
