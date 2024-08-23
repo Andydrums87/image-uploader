@@ -1,5 +1,4 @@
 require('dotenv').config()
-
 const express = require('express');
 const path = require('path');
 const multer = require('multer');
@@ -7,15 +6,17 @@ const fs = require('fs')
 const cors = require('cors');
 const cloudinary = require("cloudinary").v2;
 
-const app = express()
-app.use(cors());
-
 cloudinary.config({
   cloud_name: 'dghzq6xtd',
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
   secure: true,
 });
+
+
+const app = express()
+app.use(cors());
+
 
 
 // async function handleUpload(file) {
@@ -49,13 +50,13 @@ app.post("/upload", upload.array("files"), async (req, res) => {
  
 
   try {
- 
+
    await cloudinary.uploader
     .upload(
         `${filePath}`, {
             public_id: `${fileName}`})
+        
     fs.renameSync(filePath, `./uploads/${fileName}`)
-
   } catch (error) {
     console.log("Error", error)
     res.send({
