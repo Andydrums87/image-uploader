@@ -1,4 +1,5 @@
 require('dotenv').config()
+
 const express = require('express');
 const path = require('path');
 const multer = require('multer');
@@ -15,6 +16,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
   secure: true,
 });
+
 
 // async function handleUpload(file) {
 //   const res = await cloudinary.uploader.upload(file, {
