@@ -77,7 +77,8 @@ function Dropbox ({setLoading, loading}) {
       accept: {
         'image/jpeg' : [".jpeg", ".jpg"],
         'image/png': [".png"],
-        "image/gif": [".gif"]
+        "image/gif": [".gif"],
+        "image/heic": [".heic"]
       },
       maxFiles:1,
       maxSize:1024*1024*2
@@ -117,8 +118,8 @@ return (
 </section>
 <ul id="share__container" style={{display: uploaded === false && "none"}}>
 <li><Share files={files} /></li>
-          <li><Download files={files}/></li>
-        </ul>
+<li><Download files={files}/></li>
+</ul>
 
 
   </div>
