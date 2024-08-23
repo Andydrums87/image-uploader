@@ -18,7 +18,7 @@ function Dropbox ({setLoading, loading}) {
     const [percentage, setPercentage] = useState(0)
    
 
-  const bar = document.getElementById("bar")
+  // const bar = document.getElementById("bar")
 
     const onDrop = async (acceptedFiles) => {
   
@@ -38,16 +38,15 @@ function Dropbox ({setLoading, loading}) {
             },
             timeout: 6000,
             timeoutErrorMessage: "file took too long",
-              onUploadProgress: (progressEvent) => {
-                const percentCompleted = (progressEvent.loaded / progressEvent.total) * 100;
-                bar.setAttribute('value', percentCompleted)
-                bar.previousElementSibling.textContent = `${percentCompleted.toFixed()}%`
-                if (percentCompleted === 100) {
-                  bar.previousElementSibling.textContent = "Upload Complete"
-               
-                }
+            //   onUploadProgress: (progressEvent) => {
+            //     const percentCompleted = (progressEvent.loaded / progressEvent.total) * 100;
+            //     bar.setAttribute('value', percentCompleted)
+            //     bar.previousElementSibling.textContent = `${percentCompleted.toFixed()}%`
+            //     if (percentCompleted === 100) {
+            //       bar.previousElementSibling.textContent = "Upload Complete"
+            //     }
                 
-            }
+            // }
 
         }) 
     
